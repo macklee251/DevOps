@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: white;
+    --primary-color: #333333;
+    --secondary_color: red;
+    --max-width: 1000px;
+}
+
+nav {
+    max-width: var(--max-width);
+    margin: 10px auto;
+    padding: 20px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+nav h1 {
+    color: var(--background-color);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: px auto;
+    text-align: center;
+}
+
+main {
+    max-width: var(--max-width);
+    margin: 10px auto;
+    padding: 20px;
+}
+
+p {
+    text-indent: 20px;
+}
+
+h2, section, p, ul, li {
+    margin-bottom: 10px;
+}
+
+#lista {
+    margin-left: 10px;
+    margin-right: 20px;
+    float: left;
+}

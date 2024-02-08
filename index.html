@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <nav>
+        <h1>
+            DevOps
+        </h1>
+    </nav>
+    <main>
+        <h2>O que é DevOps?</h2>
+        <p>DevOps é uma cultura que tem como objetivo a colaboração e comunicação entre desenvolvedores e profissionais de infraestrutura, com o intuito de automatizar e integrar processos de desenvolvimento, testes e entrega de software.</p>
+
+        <section id="lista">
+            <ol type="I">
+                <li><a href wm-ol="areas/docker.html">Docker</a></li>
+                <li><a href wm-ol="areas/kubernetes.html">Kubernetes</a></li>
+            </ol>
+        </section>
+
+        <section id="conteudo">
+        </section>
+    </main>
+    </script>
+    <script>
+        document.querySelectorAll('[wm-ol]').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+
+            link.onclick = function (e) {
+                e.preventDefault()
+                fetch(link.getAttribute('wm-ol'))
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+</html>
