@@ -1,1 +1,79 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptas natus quisquam quasi deleniti autem magni consequuntur, nisi, quis dolorem deserunt veritatis, sit recusandae ipsum dolore? Neque numquam molestias aliquam?
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker</title>
+</head>
+
+<body>
+    <main>
+        <img src="./../assets/img/Screenshot 2024-02-08 at 00.22.29.png" alt="Arquitetura do docker"
+            style="width: 60%; display: block; margin: 0 auto;">
+        <h1>Comandos</h1>
+        <ol type="I">
+            <li>
+                Para criar um container usamos o comando <strong>docker container run <em>&lt;imagem&gt;</em></strong>.
+                Lembrando que todo container é baseado em uma imagem. Outra coisa importante é que o docker container
+                run é a nova forma de se executar, a forma antiga seria docker run.
+            </li>
+            <li>
+                O comando <strong>docker container ls</strong> lista todos os containers em execução. Para listas os que
+                não estão em execução, adicionamos a tag <strong>-a</strong>.
+            </li>
+            <li>
+                Podemos remover o container com o comando <strong>Docker container rm
+                    <em>&lt;id/name&gt;</em></strong></strong>.
+            </li>
+            <li>
+                Podemos também executar um container e pedir para que ele seja removido assim que a execução terminar.
+                Para isso, usamos o comando <strong>docker container run --name <em>&lt;nome-do-containner&gt;</em> --rm
+                    <em>&lt;imagem&gt;</em></strong>.
+            </li>
+            <li>
+                Para executar um container no modo interativo e habilitando o TTY usamos o comando <strong>docker
+                    container run -it --name <em>&lt;imagem&gt;</em> /bin/bash</strong>.
+            </li>
+            <li>
+                Uma das imagem que mais usamos é o <strong>nginx</strong>. Ele é um servidor web. Para executá-lo
+                rodamos docker container run -d nginx. O -d é para executá-lo em modo daemon, em segundo plano.
+            </li>
+            <li>
+                O <strong>port bind</strong> é uma forma de mapear uma porta do container para uma porta do host. Para
+                isto precisamos da flag -p. <strong>docker container run -d -p 8080:80 nginx</strong>.
+            </li>
+            <li>
+                Para verificar o que está acontecendo dentro de um container <strong>docker container inspect
+                    &lt;container_ID&gt;</strong>.
+            </li>
+            <li>
+                Para fazer a execução de um comando dentro de um container usamos o comando <strong>docker container
+                    exec -it &lt;container_ID&gt; /bin/bash</strong>.
+            </li>
+        </ol>
+        <h1>
+            Imagem
+        </h1>
+        <p>
+            Toda imagem é criada em camadas, elas utilizam a tecnologia de overlay file system. A imagem nada mais é
+            do que várias camadas de inserção de sistemas de arquivos em somente modo de leitura. O contatiner
+            é uma camada de leitura e escrita em cima da imagem.
+        </p>
+        <ol>
+            <li>
+                Podemos criar uma imagem baseada em um container, para isso utilizamos o comando <strong>docker
+                container commit <em>&lt;container_ID&gt;</em></strong>.
+            </li>
+            <li>
+                Podemos também criar uma imagem a partir de um arquivo Dockerfile. O Dockerfile é um arquivo que contém as 
+                instruções para a criação de uma imagem. Para criar a imagem usamos o comando <strong>docker image build -t <em>&lt;nome-da-imagem&gt;</em> .</strong>.
+                Por mais que possamos criar um container através de um commit, é recomendado que utilizemos o Dockerfile.
+            </li>
+        </ol>
+    </main>
+
+    <a href="./">Voltar</a>
+</body>
+
+</html>
