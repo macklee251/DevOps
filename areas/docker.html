@@ -11,6 +11,10 @@
     <main>
         <img src="./../assets/img/Screenshot 2024-02-08 at 00.22.29.png" alt="Arquitetura do docker"
             style="width: 60%; display: block; margin: 0 auto;">
+        <h1>O que é um container?</h1>
+        <p>
+            Container é uma tecnologia que nos permite executar processos de ua forma isolada.
+        </p>
         <h1>Comandos</h1>
         <ol type="I">
             <li>
@@ -63,14 +67,39 @@
         <ol>
             <li>
                 Podemos criar uma imagem baseada em um container, para isso utilizamos o comando <strong>docker
-                container commit <em>&lt;container_ID&gt;</em></strong>.
+                    container commit <em>&lt;container_ID&gt;</em></strong>.
             </li>
             <li>
-                Podemos também criar uma imagem a partir de um arquivo Dockerfile. O Dockerfile é um arquivo que contém as 
-                instruções para a criação de uma imagem. Para criar a imagem usamos o comando <strong>docker image build -t <em>&lt;nome-da-imagem&gt;</em> .</strong>.
-                Por mais que possamos criar um container através de um commit, é recomendado que utilizemos o Dockerfile.
+                Podemos também criar uma imagem a partir de um arquivo Dockerfile. O Dockerfile é um arquivo que contém
+                as
+                instruções para a criação de uma imagem. Para criar a imagem usamos o comando <strong>docker image build
+                    -t <em>&lt;nome-da-imagem&gt;</em> .</strong>.
+                Por mais que possamos criar um container através de um commit, é recomendado que utilizemos o
+                Dockerfile.
             </li>
         </ol>
+        <h1>
+            Persistencia de dados
+        </h1>
+        <ul>
+            <li>
+                <strong>Volumes</strong>: São diretórios que são montados dentro do container. São gerênciados pelo
+                docker Host. Não temos nenhuma interação a não ser criar e remover.
+            </li>
+            <li>
+                <strong>Bind</strong>: Depende de uma estrutura de diretórios existente no host. O docker não gerência o
+                Volume. Aqui mapeamos o volume que está dentro da nossa máquina para dentro do container.
+            </li>
+        </ul>
+        <h1>
+            Networks
+        </h1>
+        <ul>
+            <li>bridge</li>
+            <li>host</li>
+            <li>overlay</li>
+            <li>macvlan</li>
+        </ul>
     </main>
 
     <a href="./">Voltar</a>
